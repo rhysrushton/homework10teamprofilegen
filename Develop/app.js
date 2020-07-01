@@ -145,13 +145,15 @@ function newIntern(){
     const { name, id, school, email } = intern;
     console.log("Intern =", intern)
     employees.push(intern);
+    create(); 
 }
 
 //function for engineer
-function newEngineer(){
+function newEngineer(engineer){
         const {name, id, email, git} = engineer; 
         console.log("Engineer =", engineer)
         employees.push(engineer);
+        create()
     }
 
 
@@ -164,6 +166,11 @@ function newEngineer(){
     })
 
 
+//This function first gets the inquirer function that 
+//ask if we want to add a team member. 
+//If yes then it will then call the one that gives us 
+//the choice of engineer or intern. 
+//If no it will call the render html function. 
 async function create() {
     const confirm = await inquirer.prompt(addTeam);
     if (confirm.addMember){
@@ -171,10 +178,14 @@ async function create() {
         const employeeChosen = await inquirer.prompt(choices);
         switch(employeeChosen.choice){
             case "Engineer":
+            const engineer = await inquirer.prompt(engineerQuestions);
+            newEngineer(engineer); 
             console.log("E")
             break; 
+
             case "Intern":
             console.log("I")
+            break; 
         }
     } else console.log("no")
  
