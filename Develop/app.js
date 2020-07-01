@@ -33,3 +33,45 @@ const render = require("./lib/htmlRenderer");
 // for further information. Be sure to test out each class and verify it generates an
 // object with the correct structure and methods. This structure will be crucial in order
 // for the provided `render` function to work! ```
+
+//Inquirer Question for Type of EMployee. 
+const employeeType = [ 
+    {
+        type: "list",
+        name: "choice",
+        message: "What type of employee are you?",
+        choices: ["Engineer", "Intern"],
+    }, 
+]; 
+
+//Inquirer for Intern 
+const internQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is the name?"
+    },
+
+    {
+        type: "input",
+        name: "id",
+        message: "What is the id?"
+    },
+
+    {
+        type: "input",
+        name: "school",
+        message: "What is the school?"
+    },
+
+    {
+        type: "input",
+        name: "email",
+        message: "What is the email?"
+    },
+]
+
+inquirer.prompt(internQuestions).then((intern) => {
+    const { name, id, school, email } = intern;
+    console.log(intern)
+})
