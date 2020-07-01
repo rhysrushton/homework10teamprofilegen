@@ -168,6 +168,14 @@ async function create() {
     const confirm = await inquirer.prompt(addTeam);
     if (confirm.addMember){
         console.log("yes")
+        const employeeChosen = await inquirer.prompt(choices);
+        switch(employeeChosen.choice){
+            case "Engineer":
+            console.log("E")
+            break; 
+            case "Intern":
+            console.log("I")
+        }
     } else console.log("no")
  
 }
