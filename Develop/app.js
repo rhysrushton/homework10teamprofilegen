@@ -71,7 +71,42 @@ const internQuestions = [
     },
 ]
 
+const engineerQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is the name?"
+    },
+
+    {
+        type: "input",
+        name: "id",
+        message: "What is the id?"
+    },
+
+    {
+        type: "input",
+        name: "email",
+        message: "What is the email?"
+    },
+
+    {
+        type: "input",
+        name: "git",
+        message: "What is the engineer github?"
+    },
+]
+
 inquirer.prompt(internQuestions).then((intern) => {
     const { name, id, school, email } = intern;
-    console.log(intern)
-})
+    console.log("Intern =", intern)
+    
+    engineer(); 
+}) 
+
+async function engineer(){
+    inquirer.prompt(engineerQuestions).then((engineer)=>{
+        const {name, id, email, git} = engineer; 
+        console.log("Engineer =", engineer)
+    })
+}
