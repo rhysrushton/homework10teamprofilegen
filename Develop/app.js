@@ -108,7 +108,7 @@ const engineerQuestions = [
 
     {
         type: "input",
-        name: "git",
+        name: "github",
         message: "What is the engineer github?"
     },
 ]
@@ -135,7 +135,7 @@ const managerQuestions = [
 
     {
         type: "input",
-        name: "number",
+        name: "officeNumber",
         message: "What is the phone number?"
     },
 ]
@@ -143,28 +143,29 @@ const managerQuestions = [
 //function for intern
 function newIntern(intern){
     const { name, id, school, email } = intern;
+    const currentIntern = new Intern(name, id, school, email); 
     console.log("Intern =", intern)
-    employees.push(intern);
+    employees.push(currentIntern);
     create(); 
 }
 
 //function for engineer
 function newEngineer(engineer){
-        const {name, id, email, git} = engineer; 
+        const {name, id, email, github} = engineer; 
+        const currentEngineer = new Engineer(name, id, email, github);
         console.log("Engineer =", engineer)
-        employees.push(engineer);
+        employees.push(currentEngineer);
         create()
     }
 
-
 //function for manager. Then calls the async choice function.
     inquirer.prompt(managerQuestions).then((manager)=>{
-        const {name, id, email, number} = manager; 
+        const {name, id, email, officeNumber} = manager; 
+        const currentManager = new Manager (name, id, email, officeNumber)
         console.log("Manager =", manager)
-        employees.push(manager);
+        employees.push(currentManager);
         create();   
     })
-
 
 //This function first gets the inquirer function that 
 //ask if we want to add a team member. 
@@ -189,8 +190,18 @@ async function create() {
             console.log("I")
             break; 
         }
-    } else console.log("no")
- 
+    } else {
+       const htmlRender = render(employees)
+       makePage(htmlRender); 
+       console.log(employees);
+    } 
+}
+
+function makePage(htmlRender){
+    fs.writeFile(outputPath, htmlRender, (err) => {
+        if (err) throw err; 
+        console.log("File done")
+    })
 }
 
 
