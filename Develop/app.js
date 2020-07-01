@@ -50,7 +50,7 @@ const addTeam = [
 const choices = [
     {
         type: "list",
-        name: "type",
+        name: "choice",
         message: "Which employee type do you wish to add? Or are you finished?",
         choices: [
             "Engineer",
@@ -141,35 +141,35 @@ const managerQuestions = [
 ]
 
 //function for intern
-async function intern(){
-inquirer.prompt(internQuestions).then((intern) => {
+function newIntern(){
     const { name, id, school, email } = intern;
     console.log("Intern =", intern)
     employees.push(intern);
-    }) 
-}; 
+}
 
 //function for engineer
-async function engineer(){
-    inquirer.prompt(engineerQuestions).then((engineer)=>{
+function newEngineer(){
         const {name, id, email, git} = engineer; 
         console.log("Engineer =", engineer)
         employees.push(engineer);
-    })
-}
+    }
+
 
 //function for manager. Then calls the async choice function.
     inquirer.prompt(managerQuestions).then((manager)=>{
         const {name, id, email, number} = manager; 
         console.log("Manager =", manager)
         employees.push(manager);
-        console.log("Team=", employees)
-        addTeam();   
+        create();   
     })
 
 
-async function addTeam() {
-    inquirer.prompt(addTeam);  
+async function create() {
+    const confirm = await inquirer.prompt(addTeam);
+    if (confirm.addMember){
+        console.log("yes")
+    } else console.log("no")
+ 
 }
 
 
