@@ -39,19 +39,22 @@ const render = require("./lib/htmlRenderer");
 //This is the array that will take the value from the inquirer 
 employees = []; 
 
-
-
+const addTeam = [
+    {
+        type: "confirm", 
+        name: "addMember", 
+        message: "Would you like to add a team member?"
+    }
+]
 
 const choices = [
     {
         type: "list",
         name: "type",
-        message: "Which employee type? Or are you finished?",
+        message: "Which employee type do you wish to add? Or are you finished?",
         choices: [
-            " Manager",
             "Engineer",
-            "Intern",
-            "List is finished"
+            "Intern",  
         ]
     }
 ]
@@ -110,7 +113,6 @@ const engineerQuestions = [
     },
 ]
 
-
 //Enquirer for Manager 
 const managerQuestions = [
     {
@@ -138,36 +140,37 @@ const managerQuestions = [
     },
 ]
 
+//function for intern
+async function intern(){
 inquirer.prompt(internQuestions).then((intern) => {
     const { name, id, school, email } = intern;
     console.log("Intern =", intern)
-    
     employees.push(intern);
-    engineer(); 
-}) 
+    }) 
+}; 
 
+//function for engineer
 async function engineer(){
     inquirer.prompt(engineerQuestions).then((engineer)=>{
         const {name, id, email, git} = engineer; 
         console.log("Engineer =", engineer)
         employees.push(engineer);
-        manager(); 
     })
 }
 
-async function manager(){
+//function for manager. Then calls the async choice function.
     inquirer.prompt(managerQuestions).then((manager)=>{
         const {name, id, email, number} = manager; 
         console.log("Manager =", manager)
         employees.push(manager);
         console.log("Team=", employees)
-        choice(); 
-        
+        addTeam();   
     })
+
+
+async function addTeam() {
+    inquirer.prompt(addTeam);  
 }
 
-async function choice() {
-    inquirer.prompt(choices); 
-    
-}
+
 
