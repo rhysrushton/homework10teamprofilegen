@@ -35,6 +35,11 @@ const render = require("./lib/htmlRenderer");
 // for the provided `render` function to work! ```
 
 //Inquirer Question for Type of EMployee. 
+
+//This is the array that will take the value from the inquirer 
+employees = []; 
+
+
 const employeeType = [ 
     {
         type: "list",
@@ -130,6 +135,7 @@ inquirer.prompt(internQuestions).then((intern) => {
     const { name, id, school, email } = intern;
     console.log("Intern =", intern)
     
+    employees.push(intern);
     engineer(); 
 }) 
 
@@ -137,6 +143,7 @@ async function engineer(){
     inquirer.prompt(engineerQuestions).then((engineer)=>{
         const {name, id, email, git} = engineer; 
         console.log("Engineer =", engineer)
+        employees.push(engineer);
         manager(); 
     })
 }
@@ -145,5 +152,8 @@ async function manager(){
     inquirer.prompt(managerQuestions).then((manager)=>{
         const {name, id, email, number} = manager; 
         console.log("Manager =", manager)
+        employees.push(manager);
+        console.log("Team=", employees)
     })
 }
+
