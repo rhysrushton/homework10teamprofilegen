@@ -71,6 +71,7 @@ const internQuestions = [
     },
 ]
 
+//Inquirer for engineer
 const engineerQuestions = [
     {
         type: "input",
@@ -97,6 +98,34 @@ const engineerQuestions = [
     },
 ]
 
+
+//Enquirer for Manager 
+const managerQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is the name?"
+    },
+
+    {
+        type: "input",
+        name: "id",
+        message: "What is the id?"
+    },
+
+    {
+        type: "input",
+        name: "email",
+        message: "What is the email?"
+    },
+
+    {
+        type: "input",
+        name: "number",
+        message: "What is the phone number?"
+    },
+]
+
 inquirer.prompt(internQuestions).then((intern) => {
     const { name, id, school, email } = intern;
     console.log("Intern =", intern)
@@ -108,5 +137,13 @@ async function engineer(){
     inquirer.prompt(engineerQuestions).then((engineer)=>{
         const {name, id, email, git} = engineer; 
         console.log("Engineer =", engineer)
+        manager(); 
+    })
+}
+
+async function manager(){
+    inquirer.prompt(managerQuestions).then((manager)=>{
+        const {name, id, email, number} = manager; 
+        console.log("Manager =", manager)
     })
 }
