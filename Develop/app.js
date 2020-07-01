@@ -141,7 +141,7 @@ const managerQuestions = [
 ]
 
 //function for intern
-function newIntern(){
+function newIntern(intern){
     const { name, id, school, email } = intern;
     console.log("Intern =", intern)
     employees.push(intern);
@@ -184,6 +184,8 @@ async function create() {
             break; 
 
             case "Intern":
+                const intern = await inquirer.prompt(internQuestions);
+                newIntern(intern); 
             console.log("I")
             break; 
         }
