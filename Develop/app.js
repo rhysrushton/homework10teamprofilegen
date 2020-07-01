@@ -40,14 +40,21 @@ const render = require("./lib/htmlRenderer");
 employees = []; 
 
 
-const employeeType = [ 
+
+
+const choices = [
     {
         type: "list",
-        name: "choice",
-        message: "What type of employee are you?",
-        choices: ["Engineer", "Intern"],
-    }, 
-]; 
+        name: "type",
+        message: "Which employee type? Or are you finished?",
+        choices: [
+            " Manager",
+            "Engineer",
+            "Intern",
+            "List is finished"
+        ]
+    }
+]
 
 //Inquirer for Intern 
 const internQuestions = [
@@ -154,6 +161,13 @@ async function manager(){
         console.log("Manager =", manager)
         employees.push(manager);
         console.log("Team=", employees)
+        choice(); 
+        
     })
+}
+
+async function choice() {
+    inquirer.prompt(choices); 
+    
 }
 
