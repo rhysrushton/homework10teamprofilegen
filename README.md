@@ -21,9 +21,9 @@ Then follow prompts. Once finished navigate to the output folder where there wil
 ## Testing 
 
 ```sh
-type npm test
+type: npm test
 ```
-![alt-text](Develop\Assets\jest.gif)
+![alt-text](Assets\jest.gif)
 
 ## Credits
 
