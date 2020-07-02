@@ -23,7 +23,7 @@ Then follow prompts. Once finished navigate to the output folder where there wil
 ```sh
 type: npm test
 ```
-![Output](Develop\Assets\output.PNG)
+![Output](.\Develop\Assets\output.PNG)
 
 ## Credits
 
