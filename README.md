@@ -23,7 +23,7 @@ Then follow prompts. Once finished navigate to the output folder where there wil
 ```sh
 type: npm test
 ```
-![Alt text](https://drive.google.com/file/d/1b6Omj592AnqEHJFal7pvL7sef4KKwWvu/preview)
+![Output](Develop\Assets\output.PNG)
 
 ## Credits
 
