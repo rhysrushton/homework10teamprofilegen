@@ -1,0 +1,39 @@
+/* This changes the jumbotron colour */ 
+#top{
+    background-color: #FF4136;
+}
+
+/* Edits the card header */ 
+.card-header {
+    background-color: #FF4136;
+    font-family: 'Concert One', cursive;
+    color: #FFFF; 
+}
+
+/* Edits card body */ 
+.card-body {
+    background: linear-gradient( #FF4136, #E3100E);
+}
+
+/*Edits the list group items */ 
+.list-group-item{
+    background-color: #DDDDDD;
+    filter: brightness(120%);
+    font-family: 'Quicksand', sans-serif;;
+}
+
+/*Edits all h1 elements*/ 
+h1 {
+    font-family: 'Concert One', cursive;
+    color: #FFFF; 
+}
+
+/* Edits all cards, gives space between them by adjusting margins */ 
+.card{
+    margin: 10px; 
+}
+
+/* This is a mouse hover effect for the cards. Improves UE */ 
+.card:hover{
+   filter: brightness(40%);
+}
