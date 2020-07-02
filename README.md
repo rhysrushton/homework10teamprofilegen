@@ -23,7 +23,7 @@ Then follow prompts. Once finished navigate to the output folder where there wil
 ```sh
 type: npm test
 ```
-![alt-text](Assets\jest.gif)
+![Testing](\Develop\Assets\jest.gif)
 
 ## Credits
 
