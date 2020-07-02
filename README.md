@@ -23,7 +23,7 @@ Then follow prompts. Once finished navigate to the output folder where there wil
 ```sh
 type: npm test
 ```
-![Test](<iframe src="https://drive.google.com/file/d/1b6Omj592AnqEHJFal7pvL7sef4KKwWvu/preview" width="640" height="480"></iframe>)
+![Test](https://drive.google.com/file/d/1b6Omj592AnqEHJFal7pvL7sef4KKwWvu/preview)
 
 ## Credits
 
