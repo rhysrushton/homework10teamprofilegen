@@ -28,7 +28,8 @@ type: npm test
 ## Credits
 
 [Colors](https://clrs.cc/) for a different color library. 
-Google Fonts[https://fonts.google.com/?sidebar.open] for extra fonts. 
-Adobe Color Wheel[https://color.adobe.com/create] for making a nice colour scheme. 
-W3 Schools[https://www.w3schools.com/] for reference.
+
+[Google Fonts](https://fonts.google.com/?sidebar.open) for extra fonts. 
+[Adobe Color Wheel](https://color.adobe.com/create) for making a nice colour scheme. 
+[W3 Schools](https://www.w3schools.com/) for reference.
 
